@@ -18,10 +18,18 @@ public class ToastActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_toast);
         Button button1 = (Button) findViewById(R.id.button_1);
+        Button button2 = (Button) findViewById(R.id.button_2);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(ToastActivity.this, "you clicked button", Toast.LENGTH_SHORT).show();
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                    finish();
             }
         });
     }
