@@ -1,1 +1,1 @@
-Android 练习
+Android 练习 player.additem 00106d99 1000
