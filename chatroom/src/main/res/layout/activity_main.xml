@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--采用LinearLayout布局 它包含的子控件将以横向或竖向的方式排列  android:orientation="vertical" 垂直排列-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,7 +12,7 @@
     android:paddingTop="16dp"
     tools:context="study.zhukai.com.chatroom.MainActivity">
 
-
+    <!--ListView 该控件用来显示聊天消息，需要实现一个Adapter类配合-->
     <ListView
         android:id="@+id/msg_list_view"
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        <!--消息输入框-->
         <EditText
             android:id="@+id/input_text"
             android:layout_width="0dp"
@@ -31,6 +32,7 @@
             android:layout_weight="1"
             android:hint="Type Something"
             android:maxLines="2"/>
+        <!--消息发送按钮-->
         <Button
             android:id="@+id/send"
             android:layout_width="wrap_content"

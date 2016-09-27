@@ -2,13 +2,7 @@ package study.zhukai.com.chatroom;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,8 +24,11 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //去除标题框
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //选择布局文件
         setContentView(R.layout.activity_main);
+        //初始化几个消息
         initMsgs();
         adapter=new MsgAdapter(MainActivity.this,R.layout.msg_item,msgList);
         inputText = (EditText) findViewById(R.id.input_text);
@@ -43,9 +40,12 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 String content = inputText.getText().toString();
                 if(!"".equals(content)){
+                    //设置消息类型（接受或发送）
                     Msg msg =new Msg(content,Msg.TYPE_SENT);
                     msgList.add(msg);
+                    //向adapter通知数据更新
                     adapter.notifyDataSetChanged();
+                    //向adapter通知数据更新滚动到最新位置
                     msgListView.setSelection(msgList.size());
                     inputText.setText("");
                 }
