@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--android:layout_weight的真实含义是:一旦View设置了该属性(假设有效的情况下)，那么该 View的宽度等于原有宽度(android:layout_width)加上剩余空间的占比！-->
+<fragment
+    android:id="@+id/fragment_left.xml"
+    android:name="study.zhukai.com.fragmenttest.LeftFragment"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"/>
+    <FrameLayout
+        android:id="@+id/right_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <fragment
+            android:name="study.zhukai.com.fragmenttest.RightFragment"
+            android:id="@+id/fragment_right.xml"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></fragment>
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

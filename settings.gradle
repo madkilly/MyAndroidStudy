@@ -1,1 +1,1 @@
-include ':app', ':toast', ':intent', ':chatroom'
+include ':app', ':toast', ':intent', ':chatroom', ':fragmenttest'
